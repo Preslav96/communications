@@ -48,7 +48,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>PICkit3PlatformTool</platformTool>
         <languageToolchain>C32</languageToolchain>
-        <languageToolchainVersion>1.11</languageToolchainVersion>
+        <languageToolchainVersion>1.12</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <compileType>
@@ -454,7 +454,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>ICD3PlatformTool</platformTool>
         <languageToolchain>C32</languageToolchain>
-        <languageToolchainVersion>1.11</languageToolchainVersion>
+        <languageToolchainVersion>1.12</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <compileType>
@@ -790,7 +790,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>ICD3PlatformTool</platformTool>
         <languageToolchain>C32</languageToolchain>
-        <languageToolchainVersion>1.11</languageToolchainVersion>
+        <languageToolchainVersion>1.12</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <compileType>
@@ -1126,7 +1126,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>ICD3PlatformTool</platformTool>
         <languageToolchain>C32</languageToolchain>
-        <languageToolchainVersion>1.11</languageToolchainVersion>
+        <languageToolchainVersion>1.12</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <compileType>

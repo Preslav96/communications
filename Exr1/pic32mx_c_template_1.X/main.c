@@ -68,18 +68,69 @@ int32_t main(void)
     LED1_IO = 1; // I/O register LED 2
     LED2_IO = 1; // I/O register LED 3
     BUTTON0_TRIS = 1; // Button 1 data direction register
+    BUTTON0_IO   = 0;
+    BUTTON1_TRIS = 1; // Button 1 data direction register
+    BUTTON1_IO   = 0;
+    BUTTON2_TRIS = 1; // Button 1 data direction register
+    BUTTON2_IO   = 0;
     static DWORD ticksCount = 0;
     static DWORD t = 0;
     static DWORD tRes = 0;
     int i;
     int but;
+    int toggle1;
+    int toggle2;
+    int toggle3;
     TickInit();
 //    DoUARTConfig();
+    mPORTDToggleBits(BIT_0);
+    mPORTDToggleBits(BIT_1);
+    mPORTDToggleBits(BIT_2);
+    toggle1 = 0;
+    toggle2 = 0;
+    toggle3 = 0;
     while(1)
     {
-        for(i=0; i<40000; i++);
-        mPORTDToggleBits(BIT_0);
-        mPORTDToggleBits(BIT_1);
-        mPORTDToggleBits(BIT_2);
+        //for(i=0; i<100000; i++);
+        
+        
+        if((PORTDbits.RD6 == 0) && (toggle1 == 0))
+        {
+            for(i=0; i<10000; i++);
+            mPORTDToggleBits(BIT_0); 
+            toggle1 = 1;
+            
+        }
+        if((toggle1 == 1) && (PORTDbits.RD6 == 1))
+        {
+            for(i=0; i<10000; i++);
+            toggle1 = 0;
+        }
+        
+        if((PORTDbits.RD7 == 0) && (toggle2 == 0))
+        {
+            for(i=0; i<10000; i++);
+            mPORTDToggleBits(BIT_1); 
+            toggle2 = 1;
+        }
+        if((toggle2 == 1) && (PORTDbits.RD7 == 1))
+        {
+            for(i=0; i<10000; i++);
+            toggle2 = 0;
+        }
+        
+        if((PORTDbits.RD13 == 0) && (toggle3 == 0))
+        {
+            for(i=0; i<10000; i++);
+            mPORTDToggleBits(BIT_2); 
+            toggle3 = 1;
+        }
+        if((toggle3 == 1) && (PORTDbits.RD13 == 1))
+        {
+            for(i=0; i<10000; i++);
+            toggle3 = 0;
+        }
+        //mPORTDToggleBits(BIT_1);
+        //mPORTDToggleBits(BIT_2);
     }
 }
